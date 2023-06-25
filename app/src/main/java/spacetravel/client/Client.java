@@ -1,7 +1,10 @@
 package spacetravel.client;
 
 import jakarta.persistence.*;
+import spacetravel.ticket.Ticket;
 
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -13,6 +16,8 @@ public class Client {
 
     @Column
     private String name;
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    private Set<Ticket> tickets = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -36,5 +41,13 @@ public class Client {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Ticket> getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(Set<Ticket> tickets) {
+        this.tickets = tickets;
     }
 }

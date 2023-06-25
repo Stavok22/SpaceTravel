@@ -18,15 +18,15 @@ public class Ticket {
     private Date created_at;
 
     @JoinColumn(name = "client_id")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Client client;
 
     @JoinColumn(name = "from_planet_id")
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Planet fromPlanet;
 
     @JoinColumn(name = "to_planet_id")
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Planet toPlanet;
 
     public Ticket() {

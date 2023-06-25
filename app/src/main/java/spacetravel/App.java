@@ -11,6 +11,8 @@ import spacetravel.ticket.Ticket;
 import spacetravel.ticket.TicketCrudServices;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 public class App {
 
@@ -22,22 +24,25 @@ public class App {
 
         /* Test ClientCrudServices*/
 
-//       Client client = new Client();
-//       client.setName("Jony");
-//       client.setId(12L);
+       Client client = new Client();
+       client.setName("Jony");
 
-//        clientCrudServices.createNewClient(client)
+       Client client2 = new Client();
+       client2.setName("Jony");
+       client2.setId(13L);
+
+//        clientCrudServices.createNewClient(client);
 //        clientCrudServices.getAllClients();
-//        clientCrudServices.deleteClient(client);
-//        clientCrudServices.updateClient(1L,"Tirion");
+//        clientCrudServices.deleteClient(client2);
+//        clientCrudServices.updateClient(5L,"Mantis");
 //        clientCrudServices.getClientByID(5L);
 
 
         /*  Test PlanetCrudServices */
 
-//        Planet planet = new Planet();
-//        planet.setId("ASTRA9");
-//        planet.setName("Astra");
+        Planet planet = new Planet();
+        planet.setId("ASTRA9");
+        planet.setName("Astra");
 
 //        planetCrudService.getAll();
 //        planetCrudService.createPlanet(planet);
@@ -55,7 +60,7 @@ public class App {
 //        ticket.setClient(new ClientCrudServices().getClientByID(8L));
 //        ticket.setFromPlanet(new PlanetCrudService().getById("MARS4"));
 //        ticket.setToPlanet(new PlanetCrudService().getById("URAN5"));
-
+//
 //        new TicketCrudServices().createTicket(ticket);
 
 //        Ticket modifyTicket = new Ticket();
@@ -64,12 +69,12 @@ public class App {
 //        modifyTicket.setFromPlanet(new PlanetCrudService().getById("URAN5"));
 //        modifyTicket.setToPlanet(new PlanetCrudService().getById("MARS4"));
 //
-//        ticketCrudServices.modifyTicket(1L,modifyTicket);
+//        ticketCrudServices.modifyTicket(2L,modifyTicket);
 
 
-        ticketCrudServices.getAllTickets();
-//        ticketCrudServices.deleteTicketById(12L);
-//        ticketCrudServices.getTicketById(9L);
+//        ticketCrudServices.getAllTickets();
+//        ticketCrudServices.deleteTicketById(1L);
+//        ticketCrudServices.getTicketById(2L);
 
     }
 }

@@ -38,6 +38,7 @@ public class PlanetCrudService implements PlanetService{
             queryGetById.setParameter("id",id);
             planet=queryGetById.getSingleResult();
         }
+        System.out.println(planet);
         return planet;
     }
 

@@ -1,11 +1,11 @@
 package spacetravel.planet;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+import spacetravel.ticket.Ticket;
 
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
@@ -17,6 +17,12 @@ public class Planet {
 
     @Column
     private String name;
+
+    @OneToMany(mappedBy = "fromPlanet", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Ticket> departureTickets = new HashSet<>();
+
+    @OneToMany(mappedBy = "toPlanet", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Ticket> arrivalTickets = new HashSet<>();
     public String getId() {
         return id;
     }
